@@ -1,8 +1,8 @@
-###  DATE: 
 
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
+
+###  NAME: Afifa A
+###  ROLL NO :212223040008
+###  DEPARTMENT: B.E(CSE)
 
 
 # EXPERIMENT--02-INTERFACING-A-DIGITAL-INPUT-TO-IOT-DEVELOPMENT-BOARD-
@@ -77,12 +77,39 @@ The full form of an ARM is an advanced reduced instruction set computer (RISC) m
 
 
 ## STM 32 CUBE PROGRAM :
+```
+#include "main.h"
+#include "stdbool.h"
+void IRsensor();
+bool IRsensorop;
+while(1)
+{
+	IRsensor();
+}
+void IRsensor()
+{
+IRsensorop=HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_3);
+if (IRsensorop==1)
+{
+	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_0,GPIO_PIN_SET);
+	HAL_Delay(500);
+	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_0,GPIO_PIN_RESET);
+	HAL_Delay(500);
+}
+else
+{
+	HAL_GPIO_WritePin(GPIO,GPIO_PIN_0,GPIO_PIN_RESET);
+}
+}
+```
 
 
 
 ## Output  :
- 
- 
+ ![421724487-3090e4a4-581d-4574-85f8-8004ab5a95ca](https://github.com/user-attachments/assets/0199f96a-973c-4f97-bb25-53ab97dff4c0)
+
+ ![421724545-69cd371d-3020-42a9-a7cb-7fceccf02c6c](https://github.com/user-attachments/assets/3fae17a9-0182-4d0d-896f-ed3bf64255f6)
+
  
  
 ## Result :
